@@ -1,0 +1,111 @@
+.wp-poll-main-wrapper {
+  .form-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 20px;
+    padding-right: 15px;
+
+    .preview {
+      width: 100%;
+      max-width: 300px;
+      padding-top: 5px;
+    }
+
+    .poll-editor {
+      flex: 1;
+      flex-basis: 250px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      font-size: 16px;
+      border: 1px solid #ccc;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      margin: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #2980b9;
+    }
+
+    #pollOptionsDisplay li {
+      margin: 10px 0;
+    }
+
+    input[type="radio"] {
+      margin-right: 10px;
+    }
+
+    #imagePreview {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      aspect-ratio: 5/3;
+      position: relative;
+      background-color: #ccc;
+      cursor: pointer;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    #imagePreview img {
+      width: 100%;
+      height: 100% !important;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    #imagePreview .placeholder {
+      display: block;
+      text-align: center;
+      opacity: 0;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      cursor: pointer;
+    }
+
+    #imagePreview img[src="null"] {
+      opacity: 0;
+
+      &+.placeholder {
+        opacity: 1;
+      }
+    }
+
+    #imagePreview:hover {
+      &:after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .placeholder {
+        opacity: 1;
+        color: #fff !important;
+      }
+    }
+  }
+
+  .text-center {
+    text-align: center;
+  }
+}
